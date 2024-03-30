@@ -26,6 +26,7 @@ PyAutoGUI
 PyGetWindow
 PyMsgBox
 pyperclip
+django-cors-headers
 PyRect
 pyscreenshot
 PyScreeze

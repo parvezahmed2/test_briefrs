@@ -32,6 +32,27 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS=True
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:5500', 'https://*.127.0.0.1']
+ 
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    'http://127.0.0.1:5500',
+    'http://127.0.0.1:5500',
+]
+CORS_ALLOW_METHODS = (
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+)
+
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +64,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+     "corsheaders",
     'account',
     'blog',
 
@@ -56,6 +78,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'test_briefrs.urls'
